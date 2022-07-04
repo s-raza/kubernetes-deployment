@@ -11,6 +11,7 @@ resource "proxmox_vm_qemu" "control_plane" {
   memory            = 4096
   scsihw            = "virtio-scsi-pci"
   bootdisk          = "scsi0"
+  onboot            = true
 
   disk {
     size            = "15G"
@@ -45,6 +46,7 @@ resource "proxmox_vm_qemu" "worker_nodes" {
   memory            = 2048
   scsihw            = "virtio-scsi-pci"
   bootdisk          = "scsi0"
+  onboot            = true
 
   disk {
     size            = "10G"
